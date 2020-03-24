@@ -14,29 +14,21 @@ class Song
   end
   
   def artist=(artist)
-    
-    @artist = artist
-  
-      
+      @artist = artist
       @@artists << artist
-      
-    
-    
-    
-    
-    
+  
   end
+  
   def Song.genres
     @@genres.uniq
   end
+  
   def Song.artists
     @@artists.uniq
   end
     
   def genre=(genre)
-    
-      @@genres << genre
-    
+    @@genres << genre
     @@genre = genre
   end
   
@@ -45,24 +37,24 @@ class Song
     @@genres.each do |element|
       if not hash.key?(element)
       hash[element] = 1 
-    else
+      else
       hash[element] = hash[element] + 1
-    end
+      end
     end
     hash
-end
+  end
   
    def Song.artist_count
     hash = {}
     @@artists.each do |element|
-      if not hash.key?(element)
-      hash[element] = 1 
-    else
-      hash[element] = hash[element] + 1
+       if not hash.key?(element)
+       hash[element] = 1 
+       else
+       hash[element] = hash[element] + 1
+       end
+     end
+     hash
     end
-    end
-    hash
-end
 
   def Song.count
   
